@@ -1,4 +1,6 @@
-name: Test on Push
+name: Python Application
+
+
 
 on:
   push:
@@ -15,13 +17,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Checkout Repository
-        uses: actions/checkout@main
-
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          make install
 
-      - name: Execute test cases
+      - name: Test with pytest
         run: |
           pytest test.py
