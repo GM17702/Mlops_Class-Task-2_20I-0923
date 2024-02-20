@@ -1,15 +1,21 @@
-class StudentsInMLOps:
-    def __init__(self):
-        self.total_strength = 0
+class mlops:
+    def __init__(self, totalStudents):
+        self.totalStudents = totalStudents
 
-    def enrollStudents(self, count):
-        self.total_strength += count
-
-    def dropStudents(self, count):
-        self.total_strength -= count
-
-    def getTotalStrength(self):
-        return self.total_strength
-
+    def getTotalStudents(self):
+        return self.totalStudents
+    
+    def addStudent(self):
+        self.totalStudents += 1
+    
+    def removeStudent(self):
+        self.totalStudents -= 1
+    
     def getClassName(self):
-        return self.__class__.__name__
+        return "Machine Learning Operations (CS-B)"
+    
+mlops_class = mlops(5)
+mlops_class.addStudent()
+mlops_class.removeStudent()
+print(mlops_class.getTotalStudents())
+print(mlops_class.getClassName())
